@@ -4,7 +4,18 @@ Marketing site for **Lumiq Digital Solutions**, a studio building websites,
 landing pages, e-commerce stores, and Web3 integrations for businesses across
 East Africa and beyond.
 
-Built with **React 19 + Vite**.
+Built with **React 19 + Vite**, fully responsive, dark-themed, SEO-ready.
+
+---
+
+## Tech stack
+
+- **React 19** + **Vite** — fast dev server, lean production bundle
+- **lucide-react** — UI icons (https://lucide.dev/icons)
+- **react-icons/fa6** — brand marks (X, GitHub, LinkedIn)
+- **Vanilla CSS-in-JSX** — single `GlobalStyles` block, no CSS framework
+- **ESLint** + **Prettier** + **EditorConfig**
+- **JSON-LD** structured data, Open Graph, sitemap, `robots.txt`
 
 ---
 
@@ -39,7 +50,21 @@ sourced from Vite environment variables (prefix `VITE_`). See
 The contact form currently hands enquiries off via `mailto:` (opens the user's
 email client with a prefilled message). Wire it up to a real endpoint
 (Formspree / Web3Forms / your own API) inside
-[`src/sections/Contact.jsx`](src/sections/Contact.jsx) when ready.
+[`src/sections/Contact.jsx`](src/sections/Contact.jsx) when ready — swap the
+`window.location.href = buildMailto(form)` line in `onSubmit` for a
+`fetch()` call.
+
+## Icons
+
+All icons are centralized in
+[`src/components/icons.jsx`](src/components/icons.jsx) and re-exported with
+stable names (`IcoX`, `IcoGH`, `IcoGlobe`, etc.). Swap libraries or specific
+icons in this file without touching any section.
+
+- **UI icons** — [`lucide-react`](https://lucide.dev/icons)
+  (`Globe`, `Zap`, `Shield`, `Users`, `Code2`, `Clock`, `Menu`, `X`, `Check`, `Star`)
+- **Brand icons** — [`react-icons/fa6`](https://react-icons.github.io/react-icons/icons?name=fa6)
+  (`FaXTwitter`, `FaGithub`, `FaLinkedin`)
 
 ## Project structure
 
@@ -63,7 +88,7 @@ src/
 │   ├── Reveal.jsx             # Scroll-reveal wrapper
 │   ├── SectionHeader.jsx      # Eyebrow + heading combo
 │   ├── SkipLink.jsx           # A11y skip-to-content
-│   └── icons.jsx              # Inline SVG icon set
+│   └── icons.jsx              # lucide-react + react-icons wrappers
 └── sections/
     ├── Hero.jsx
     ├── Why.jsx
@@ -86,8 +111,22 @@ relevant section file.
 - Keyboard-only "Skip to content" link
 - Semantic landmarks (`<nav>`, `<main>`, `<footer>`)
 - `aria-expanded` on collapsible service / FAQ rows
+- `aria-modal` + `role="dialog"` on the mobile drawer
+- `role="status"` / `aria-live` on the contact-success state
 - `prefers-reduced-motion` respected (animations disabled)
 - Focus rings on all interactive elements
+- `autoComplete` hints on every form field
+
+## SEO
+
+- Hand-written `<title>` and `<meta name="description">` in
+  [`index.html`](index.html)
+- Open Graph + Twitter card metadata
+- `<link rel="canonical">` and `theme-color`
+- JSON-LD `Organization` schema
+- [`public/robots.txt`](public/robots.txt) +
+  [`public/sitemap.xml`](public/sitemap.xml)
+- `<noscript>` fallback message
 
 ## Deployment
 

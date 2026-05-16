@@ -109,7 +109,9 @@ export function GlobalStyles() {
       .nav-cta-desktop{display:flex}
       .nav-right{display:flex;gap:12px;align-items:center;justify-self:end}
       .hamburger{display:none}
-      .hamburger svg{width:36px;height:36px}
+      .hamburger svg{width:48px;height:48px}
+      .ico-burger line{transform-origin:center;transition:transform .3s cubic-bezier(.16,1,.3,1)}
+      .hamburger:hover .ico-burger__mid{transform:translateX(2px)}
       .mobile-menu{display:none}
 
       @media(max-width:900px){

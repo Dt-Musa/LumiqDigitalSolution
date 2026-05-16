@@ -13,7 +13,6 @@ import {
   Clock,
   Code2,
   Globe,
-  Menu,
   Shield,
   Star,
   Users,
@@ -52,9 +51,35 @@ export function IcoCode({ s = 20, ...rest }) {
 export function IcoClock({ s = 20, ...rest }) {
   return <Clock size={s} strokeWidth={1.6} {...rest} />
 }
-export function IcoMenu({ s = 22, ...rest }) {
-  return <Menu size={s} strokeWidth={2.4} {...rest} />
+
+/**
+ * Classic three-bar hamburger — equal length, even spacing. Optimised for
+ * recognition and conversion. The universal "menu" glyph any visitor can
+ * spot instantly. Small, deliberate hover lift adds polish without
+ * sacrificing clarity.
+ */
+export function IcoMenu({ s = 18, ...rest }) {
+  return (
+    <svg
+      className="ico-burger"
+      width={s}
+      height={s}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...rest}
+    >
+      <line className="ico-burger__top" x1="4" y1="8" x2="18" y2="8" />
+      <line className="ico-burger__mid" x1="4" y1="12" x2="18" y2="12" />
+      <line className="ico-burger__bot" x1="4" y1="16" x2="18" y2="16" />
+    </svg>
+  )
 }
+
 export function IcoClose({ s = 22, ...rest }) {
   return <XGlyph size={s} strokeWidth={2} {...rest} />
 }
