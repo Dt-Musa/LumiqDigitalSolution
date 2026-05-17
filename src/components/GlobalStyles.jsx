@@ -145,6 +145,8 @@ export function GlobalStyles() {
         .hero-preview{margin-top:28px}
         .metrics{gap:28px}
         .footer-links{flex-direction:column;gap:32px}
+        .footer-bottom{justify-content:center !important;text-align:center}
+        .footer-bottom > div{justify-content:center;width:100%}
         .nav-links-desktop{display:none}
         .nav-cta-desktop{display:none}
         .hamburger{display:flex;align-items:center;justify-content:center;background:transparent;border:none;cursor:pointer;color:#f1f1f1;padding:6px}

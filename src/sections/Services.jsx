@@ -113,7 +113,7 @@ export function Services() {
                     +
                   </span>
                 </div>
-                <div className="sb" style={{ maxHeight: isOpen ? '180px' : '0', opacity: isOpen ? 1 : 0 }}>
+                <div className="sb" style={{ maxHeight: isOpen ? '600px' : '0', opacity: isOpen ? 1 : 0 }}>
                   <div
                     style={{
                       paddingTop: 14,

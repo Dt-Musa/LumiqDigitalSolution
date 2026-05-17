@@ -96,6 +96,7 @@ export function Footer() {
         </div>
 
         <div
+          className="footer-bottom"
           style={{
             borderTop: `1px solid ${C.b1}`,
             paddingTop: 28,

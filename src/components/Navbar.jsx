@@ -149,7 +149,7 @@ export function Navbar() {
           >
             Get a Quote
           </a>
-          <div style={{ display: 'flex', gap: 16, marginTop: 36 }}>
+          <div style={{ display: 'flex', gap: 16, marginTop: 36, justifyContent: 'center' }}>
             {SOCIALS.map((s) => (
               <a
                 key={s.label}
